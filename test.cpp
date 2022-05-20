@@ -1,16 +1,31 @@
 #include <iostream>
+#include <fstream>
+#include "MatFrac.h"
 #include "Fraccion.h"
 
 using namespace std;
 
-int main(){
+int main()
+{
+    // Create a text string, which is used to output the text file
+    string myText;
+    // Read from the text file
+    ifstream MyReadFile("matrix1.txt");
+    // Use a while loop together with the getline() function to read the file line by line
+    while (getline(MyReadFile, myText))
+    {
+        // Output the text from the file
+        string numstr = myText.substr(0,myText.find("/"));
+        int numerator = stoi(numstr);
 
-    //Test our 'Fraccion' class:
-    Fraccion f1(2,4);
-    Fraccion f2(3,6);
-    Fraccion res = f1.multiply(f2);
+        string denstr = myText.substr(myText.find("/")+1,myText.length());
+        int denominator = stoi(denstr);
 
-    res.toString();
+        Fraccion f1(numerator, denominator);
+        f1.toString();
 
-    
+        //cout << myText << endl; //myText "1/2"
+    }
+    // Close the file
+    MyReadFile.close();
 }

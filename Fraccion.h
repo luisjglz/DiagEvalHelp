@@ -2,6 +2,10 @@
 #include <iostream>
 using namespace std;
 
+#ifndef _FRACCION_
+#define _FRACCION_
+
+
 class Fraccion
 {
 private:
@@ -79,3 +83,6 @@ Fraccion::Fraccion(int n1, int n2)
         denominator = n2/mcd;
     }
 }
+
+
+#endif
