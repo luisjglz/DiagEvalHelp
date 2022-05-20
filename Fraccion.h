@@ -3,7 +3,7 @@
 using namespace std;
 
 class Fraccion{
-    int nuˆmerator;
+    int numerator;
     int denominator;
     public:
         Fraccion();
