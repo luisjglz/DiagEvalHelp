@@ -15,6 +15,7 @@ int main()
     while (getline(MyReadFile, myText))
     {
         // Output the text from the file
+        // Obtenemos la primera parte del string, que es el numerador.
         string numstr = myText.substr(0,myText.find("/"));
         int numerator = stoi(numstr);
 
